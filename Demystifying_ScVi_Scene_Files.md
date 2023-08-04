@@ -30,7 +30,7 @@ If you're familiar with the `/world/data` content of ScVi, you know that all of 
 
 However, scene files aren't _quite_ so easy as that.
 
-#### Opening a Scene File
+### Opening a Scene File
 
 So let's take a look at one of these as an example of what to expect when working with the scene files:
 
@@ -50,7 +50,7 @@ This will allow you to view that field like any of the other flatbuffer files, a
 
 But if you open that .json you just made, you'll find a new header and ... _oh no, more flatbuffer data?_
 
-#### The Complexity of Scene Files
+### The Complexity of Scene Files
 
 This is effectively how scene files are constructed: 
 
