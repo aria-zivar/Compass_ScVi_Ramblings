@@ -41,15 +41,15 @@ When you open this .json, you'll find some basic information about the file in t
 And the `nested_type` field is just integers. Hundreds, thousands of them sometimes, depending on the field content. This `world_fixed_placement_symbol` file is almost 600k lines long, after all, and it's almost all because of these `nested_type` fields.
 
 Back to the spoiler part at the top: _It's flatbuffers~_
-\
+
 The `type_name` field tells you what kind of trinity object it is, for which there's probably already a flatbuffer schema ready-to-use for a lot of these in the [`PokeDocs`](https://github.com/pkZukan/PokeDocs/tree/main/SV/Flatbuffers/scene) repo.
-\
+
 All the `nested_type` is just the uint8 breakdown of a flatbuffer, one byte at a time, in decimal format. But on its own, that's pretty useless. In order to do anything with this, you need to write this `nested_type` field out directly as binary data, and then use flatc again with the appropriate schema to convert it into JSON.
-\
+
 This will allow you to view that field like any of the other flatbuffer files, as the results are stored in a .json file which you can open and edit like you're used to if you've done any editing of the `world\data` files.
-\
+
 But if you open that .json you just made, you'll find a new header and ... _oh no, more flatbuffer data?_
-\
+
 #### The Complexity of Scene Files
 
 This is effectively how scene files are constructed: 
